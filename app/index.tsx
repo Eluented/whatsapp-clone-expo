@@ -7,8 +7,16 @@ const welcome_image = Image.resolveAssetSource(welcomeImage).uri;
 
 const WelcomeScreen = () => {
   const openLink = () => {
-    Linking.openURL('https://galaxies.dev');
+    Linking.openURL('https://www.onurbelek.com');
   };
+
+  const sendOTP = async () => {
+
+  }
+
+  const trySignIn = async () => {
+    
+  }
 
   return (
     <View style={styles.container}>
