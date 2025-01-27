@@ -10,13 +10,7 @@ const WelcomeScreen = () => {
     Linking.openURL('https://www.onurbelek.com');
   };
 
-  const sendOTP = async () => {
 
-  }
-
-  const trySignIn = async () => {
-    
-  }
 
   return (
     <View style={styles.container}>
