@@ -6,6 +6,7 @@ import {
   Platform,
   TouchableOpacity,
   Linking,
+  ActivityIndicator,
 } from "react-native";
 import React, { useState } from "react";
 import { useRouter } from "expo-router";
@@ -48,7 +49,17 @@ const otp = () => {
     Linking.openURL("https://www.onurbelek.com");
   };
   return (
-    <KeyboardAvoidingView style={{ flex: 1 }}>
+    <KeyboardAvoidingView
+      keyboardVerticalOffset={keyboardVerticalOffset}
+      style={{ flex: 1 }}
+      behavior="padding"
+    >
+      {loading && (
+        <View style={[StyleSheet.absoluteFill, styles.loading]}>
+          <ActivityIndicator size="large" color={Colors.primary} />
+          <Text style={{ fontSize: 18, padding: 10 }}>Sending code...</Text>
+        </View>
+      )}
       <View style={styles.container}>
         <Text style={styles.description}>otp</Text>
         <View style={styles.list}>
