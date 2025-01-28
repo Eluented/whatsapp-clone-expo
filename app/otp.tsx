@@ -40,8 +40,15 @@ const otp = () => {
   const route = useRouter();
   const keyboardVerticalOffset = Platform.OS === "ios" ? 90 : 0;
   const { bottom } = useSafeAreaInsets();
+  const router = useRouter();
 
-  const sendOTP = async () => {};
+  const sendOTP = async () => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      router.push(`/verify/${phoneNumber}`);
+    }, 2000);
+  };
 
   const trySignIn = async () => {};
 
@@ -64,7 +71,7 @@ const otp = () => {
         <Text style={styles.description}>otp</Text>
         <View style={styles.list}>
           <View style={styles.listItem}>
-            <Text style={styles.listItem}>UK</Text>
+            <Text style={styles.listItemText}>UK</Text>
             <Ionicons name="chevron-forward" size={20} color={Colors.gray} />
           </View>
 
